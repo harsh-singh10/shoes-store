@@ -1,7 +1,7 @@
-const store = document.getElementById("store-items");
+let store = document.getElementById("store-items");
 
 
-let basket =[];
+let basket =JSON.parse( localStorage.getItem("data") )  || [];
    console.log(basket);
 
 let storeItems = [
@@ -63,7 +63,9 @@ let increment = (id)=>{
   else{
     search.item +=1;
   }
-  console.log(basket);
+  
+  localStorage.setItem("data" , JSON.stringify(basket));
+  
   calculate()
  
 };
@@ -76,6 +78,7 @@ let calculate = ()=>{
     cartValue.innerHTML = basket.map((x) => x.item ).reduce((x,y) =>x+y,0  )
    
 }
+calculate();
 
 
 

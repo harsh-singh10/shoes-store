@@ -95,3 +95,40 @@ body{
     transform: translateY(-3px);
     background-color: #e5dd79;
 }
+
+ /* CARTT ITEMS -------------------------------------------- */
+
+ .label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .cart-btn{
+    padding: 7px 30px;
+    transition: background 0.5s , transform 0.5s;
+    border-radius: 46px;
+   margin-top: 5px;
+    border: 3px ;
+    
+ }
+ .cart-btn:hover{
+    transform: translateY(-3px);
+    background-color: #e5dd79;
+ }
+ .cart-items{
+    display: grid;
+    grid-template-columns: repeat(1 , 350px);
+    justify-content: center;
+   
+ }
+ .cart-shop{
+    display: flex;
+   
+    border: 2px solid black;
+ }
+ .ToBePurchaged{
+    display: flex;
+    gap: 10px;
+    margin-left: 11px;
+    margin-top: 7px;
+ }
