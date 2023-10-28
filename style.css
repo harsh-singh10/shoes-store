@@ -5,17 +5,22 @@
 }
 body{
     font-family: sans-serif;
+    background-color: #b9d2ba;
 }
 
 .nav-bar{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(99, 18, 221);
+    /* background-color: rgb(99, 18, 221); */
     height: 70px;
     color: black;
     padding: 25px 60px ;
     margin-bottom: 30px;
+}
+.nav-bar h2:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
 }
 .cart{
     position: relative;
@@ -24,6 +29,7 @@ body{
     padding: 10px;
     background-color: #fff;
     border-radius: 14px;
+    transition: background 0.5s , transform 0.5s;
 }
 .cart-amount{
     position: absolute;
@@ -32,6 +38,9 @@ body{
     font-size: 20px;
     color: black;
     
+}
+.cart:hover{
+    transform: translateY(-10px);
 }
 
 
@@ -50,13 +59,16 @@ body{
     gap: 30px;
 }
 .container{
-    border: 2px solid black;
+    border: 2px solid #e5dd79;
     height: 315px;
-   
+    transition: background 0.5s , transform 0.5s;
 }
 .container img{
     height: 201px;
+  
 }
+
+
 .details{
    
     flex-direction: column;
@@ -67,4 +79,16 @@ body{
 }
 .btn{
     padding: 7px 30px;
+    transition: background 0.5s , transform 0.5s;
+    border-radius: 46px;
+   margin-top: 5px;
+    border: 3px ;
+}
+.container:hover{
+    /* background:  rgb(99, 18, 221); */
+    transform: translateY(-10px);
+}
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: #e5dd79;
 }
