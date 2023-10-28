@@ -121,14 +121,13 @@ body{
     justify-content: center;
    
  }
- .cart-shop{
+.cart-shop{
     display: flex;
-   
     border: 2px solid black;
  }
- .ToBePurchaged{
+ .name-price-del{
     display: flex;
-    gap: 10px;
-    margin-left: 11px;
-    margin-top: 7px;
- }
+}
+
+ 
+ 
