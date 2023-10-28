@@ -15,6 +15,7 @@ body{
     height: 70px;
     color: black;
     padding: 25px 60px ;
+    margin-bottom: 30px;
 }
 .cart{
     position: relative;
@@ -31,4 +32,39 @@ body{
     font-size: 20px;
     color: black;
     
+}
+
+
+
+/* ITEMS IN THE STORE --------------------------------------------------- */
+
+
+
+
+.store-items{
+    margin-top: 40x;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,304px);
+    gap: 30px;
+}
+.container{
+    border: 2px solid black;
+    height: 315px;
+   
+}
+.container img{
+    height: 201px;
+}
+.details{
+   
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.btn{
+    padding: 7px 30px;
 }
