@@ -47,15 +47,12 @@ let generateCartItems = ()=>{
               <div class="total-of-every-productt">
                 <h3> ${x.item * search.price}</h3>
               </div>
-                
 
             </div>
-           
 
-
-
-
-        </div>` 
+        </div>
+              
+        ` 
                 
               ;
           }).join(" "))
@@ -74,6 +71,7 @@ let remove = (id)=>{
     basket = basket.filter((x) => x.id != selectedId);
     generateCartItems();
     calculate();
+    totalAmount();
     localStorage.setItem("data", JSON.stringify(basket));
 }
 
@@ -93,6 +91,7 @@ let increment = (id)=>{
     }
     
     localStorage.setItem("data" , JSON.stringify(basket));
+    totalAmount();
     generateCartItems();
     calculate()
    
@@ -114,9 +113,33 @@ let increment = (id)=>{
 
   
 
-    localStorage.setItem("data" , JSON.stringify(basket));
+   
     basket = basket.filter((x)=> x.item !== 0)
+    localStorage.setItem("data" , JSON.stringify(basket));
+    totalAmount();
     generateCartItems();
     calculate()
    
   }
+// Total amount ------------------------------------------------
+
+//  let total = document.getElementById("cartItems");
+
+let totalAmount = () => {
+
+   if(basket.length != 0){
+    let amount = basket.map((x) => {
+        let search = storeItems.find((y) => y.id == x.id);
+        return x.item*search.price;
+    }).reduce((x,y)=>x+y,0);
+    
+    //console.log(amount);
+    label.innerHTML = `
+    <h3>The Grand total :${amount} </h3>`
+   }
+  else return;
+  
+  }
+  
+  totalAmount();
+ 
