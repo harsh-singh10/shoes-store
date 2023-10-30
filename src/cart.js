@@ -34,7 +34,7 @@ let generateCartItems = ()=>{
                 <div class="name-price-del">
                     <h3>${search.name}</h3>
                     <p class="rupee" > $ ${search.price}</p>
-                    <i onclick="" class=" trash bi bi-trash"></i>
+                    <i onclick="remove(${x.id})" class=" trash bi bi-trash"></i>
                    
                 </div>
                 <div class="cart-add-sub">
@@ -69,5 +69,10 @@ let generateCartItems = ()=>{
 }
 generateCartItems();
 
-
-
+let remove = (id)=>{
+    let selectedId = id;
+    basket = basket.filter((x) => x.id != selectedId);
+    generateCartItems();
+    calculate();
+    localStorage.setItem("data", JSON.stringify(basket));
+}
