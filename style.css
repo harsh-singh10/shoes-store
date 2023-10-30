@@ -126,8 +126,34 @@ body{
     border: 2px solid black;
  }
  .name-price-del{
+    
     display: flex;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 4px;
+    align-items: center;
 }
+.trash{
+    margin-left: 2px;
+}
+.rupee{
+    padding: 2px 4px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+ 
 
+.cart-add-sub{
+    display: flex;
+    margin-top: 14px;
+    gap: 11px;
+}
  
- 
+
+.every{
+    margin-left: 11px;
+}
+.total-of-every-productt{
+    margin-top: 6px;
+}
