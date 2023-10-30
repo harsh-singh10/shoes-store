@@ -24,9 +24,9 @@ let generateCartItems = ()=>{
     if (basket.length !== 0) {
         return (cartItems.innerHTML = basket.map((x) => {
             let { id, item } = x;
-            console.log(x);
+           
              let search = storeItems.find((y) => y.id == id) || [];
-             console.log(search);
+           
             return`  <div class="cart-shop">
           
             <img width="150" src="${search.img}" alt="">
@@ -39,9 +39,9 @@ let generateCartItems = ()=>{
                 </div>
                 <div class="cart-add-sub">
     
-                    <i onclick = "decrement()" class="bi bi-dash-lg"></i>
+                    <i onclick = "decrement(${x.id})" class="bi bi-dash-lg"></i>
                    <div id = "${x.id}" class="quantity">${x.item}</div>
-                   <i onclick = "increment()" class="bi bi-plus-lg"></i>
+                   <i onclick = "increment(${x.id})" class="bi bi-plus-lg"></i>
   
               </div>
               <div class="total-of-every-productt">
@@ -76,3 +76,47 @@ let remove = (id)=>{
     calculate();
     localStorage.setItem("data", JSON.stringify(basket));
 }
+
+
+let increment = (id)=>{
+    
+    let selectedItem = id;
+    let search = basket.find((x) => x.id === selectedItem);
+    if(search === undefined){
+      basket.push({
+          id : selectedItem,
+          item : 1
+      })
+    }
+    else{
+      search.item +=1;
+    }
+    
+    localStorage.setItem("data" , JSON.stringify(basket));
+    generateCartItems();
+    calculate()
+   
+  };
+
+  let decrement = (id)=>{
+    let selectedId = id;
+   
+    let search = basket.find((x) => x.id == selectedId)
+    if(search == undefined){
+        return
+    }
+    else if(search.item == 0){
+        return
+    }
+    else{
+        search.item -= 1;
+    }
+
+  
+
+    localStorage.setItem("data" , JSON.stringify(basket));
+    basket = basket.filter((x)=> x.item !== 0)
+    generateCartItems();
+    calculate()
+   
+  }
