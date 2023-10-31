@@ -18,8 +18,8 @@ let generateStore = ()=>{
             <h2>${name}</h2>
             <div class="price-btn">
                 <h3 style=" margin-left: 30px;">$ ${price} </h3>
-                <div class="add-to-cart">
-                    <button onclick="increment(${id})" class="btn">Add To Cart</button>
+                <div class="add-to-cart"  >
+                    <button id ="${id}" onclick="increment(${id}) ; change(${id})" class="btn">Add To Cart</button>
                 </div>
             </div>
         </div>
@@ -28,6 +28,36 @@ let generateStore = ()=>{
     } ).join(" "));
 }
 generateStore();
+
+//FOR CHANGE NAME OF THE BUTTON
+
+
+// Get all the "Add to Cart" buttons on the page
+const addToCartButtons = document.querySelectorAll(".btn");
+
+// Function to change the button text to "Added" when clicked
+function changeButtonText(event) {
+    const button = event.target;
+    button.textContent = "Added";
+
+}
+
+// Attach a click event listener to each "Add to Cart" button
+addToCartButtons.forEach((button) => {
+    button.addEventListener("click", changeButtonText);
+});
+
+
+
+
+
+   
+    
+
+
+
+
+
 
 
 // THIS IS FOR INCREMENT THE ITEM NO THAT IS SELECTED 
@@ -40,14 +70,18 @@ let increment = (id)=>{
         id : selectedItem,
         item : 1
     })
+   
   }
   else{
     search.item +=1;
   }
   
+  
+
   localStorage.setItem("data" , JSON.stringify(basket));
   
   calculate()
+ 
  
 };
 

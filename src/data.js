@@ -22,5 +22,29 @@ let storeItems = [
         name: "Product 4",
         price : 2200,
         img : "images/np2.jpg"
-    }
+    },
+    {
+        id : "5",
+        name: "Product 5",
+        price : 2200,
+        img : "images/pic2.avif"
+    },
+    {
+        id : "6",
+        name: "Product 6",
+        price : 2200,
+        img : "images/pic2.avif"
+    },
+    {
+        id : "7",
+        name: "Product 7",
+        price : 2200,
+        img : "images/pic2.avif"
+    },
+    {
+        id : "8",
+        name: "Product 8",
+        price : 2200,
+        img : "images/np1.webp"
+    },
 ];

@@ -45,7 +45,7 @@ let generateCartItems = ()=>{
   
               </div>
               <div class="total-of-every-productt">
-                <h3> ${x.item * search.price}</h3>
+                <h3>$ ${x.item * search.price}</h3>
               </div>
 
             </div>
