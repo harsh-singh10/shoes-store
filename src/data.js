@@ -48,7 +48,7 @@ let storeItems = [
         img : "images/np1.webp"
     },
     {
-        id : "8",
+        id : "9",
         name: "Product 8",
         price : 2200,
         img : "images/np1.webp"
